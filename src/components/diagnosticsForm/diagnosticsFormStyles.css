@@ -1,0 +1,60 @@
+.form-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+    display: flex;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.cancel {
+  border: 1px solid #b1b9c3;
+  background-color: white;
+  color: #01152b;
+}
+
+.btn.save {
+  background-color: #6c63ff;
+  color: white;
+}

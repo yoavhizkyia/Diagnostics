@@ -1,0 +1,31 @@
+.table-section {
+  background: #e6e8ec;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 32px;
+}
+
+.diagnostic-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.diagnostic-table th {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #55687d;
+}
+
+.diagnostic-table td {
+  padding: 20px 12px;
+  background: white;
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+}

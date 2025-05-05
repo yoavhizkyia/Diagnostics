@@ -1,0 +1,24 @@
+.graph-section {
+  background-color: #f3f4f6;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.graph-header label {
+  font-size: 14px;
+  color: #444;
+}
+
+.graph-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+}
