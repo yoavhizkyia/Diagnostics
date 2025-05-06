@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import {
   LineChart,
   Line,
@@ -50,29 +50,36 @@ const DiagnosticsGraph: React.FC<Props> = ({ diagnostics }) => {
           />
         </label>
       </div>
-
-      <ResponsiveContainer height={200} className={'graph-container'}>
-        <LineChart
-          data={diagnosticTrendData}
-          margin={{ top: 15, right: 40, left: 40, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="10" />
-          <XAxis
-            dataKey="day"
-            tickFormatter={(val) => formatDay(new Date(val))}
-          />
-          <YAxis tick={false} axisLine={false} width={0} />
-          <Tooltip content={<CustomTooltip />} />
-          <Line
-            type="linear"
-            dataKey={(diagnostic: Diagnostic) => severityScore[diagnostic.severity]}
-            stroke="#8884d8"
-            dot={(props) => (
-              <Dot {...props} fill={getSeverityColor(props.payload.severity)} r={6} />
-            )}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+      {
+        diagnosticTrendData.length > 0 ? (
+          <ResponsiveContainer height={200} className={'graph-container'}>
+            <LineChart
+              data={diagnosticTrendData}
+              margin={{ top: 15, right: 40, left: 40, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="10" />
+              <XAxis
+                dataKey="day"
+                tickFormatter={(val) => formatDay(new Date(val))}
+              />
+              <YAxis tick={false} axisLine={false} width={0} />
+              <Tooltip content={<CustomTooltip />} />
+              <Line
+                type="linear"
+                dataKey={(diagnostic: Diagnostic) => severityScore[diagnostic.severity]}
+                stroke="#8884d8"
+                dot={(props) => (
+                  <Dot {...props} fill={getSeverityColor(props.payload.severity)} r={6} />
+                )}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        ) :
+          <div>
+            <h3>No data available</h3>
+            <p>Try changing the date range.</p>
+          </div>
+      }
     </div>
   );
 };
